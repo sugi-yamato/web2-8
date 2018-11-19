@@ -23,6 +23,10 @@ counter[1] + '秒' ;
 refresh();
 }
 
+document.getElementById('remove_cookie').onsubmit = function(){
+    setCokie('lastData',"",0);
+}
+
 var refresh= function(){
     setTimeout(update,1000);
 }
