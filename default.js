@@ -6,6 +6,11 @@ var separate_time = function(time){
     var year = time.getHullYear();
     return[sec,min,hours,days,month,year];
 }
+
+document.getElementById('form').select.onchange = function(){
+    location.href = document.getElementById('form').select.value;
+}
+
 var update = function(){
 var now = new Date();
 var counter = separate_time(now);
