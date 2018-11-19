@@ -22,9 +22,18 @@ counter[2] + '分' +
 counter[1] + '秒' ;
 refresh();
 }
+var last_data = getCookie('lastData');
+if(last_data){
+    document.getElementById('cookie').textContent = '前回きた時間:' + last_data;
+}else{
+    document.getElementById('cookie').textContent = '初めまして';
+}
+
+var current_time = new Date();
+setCookie('lastData',current_time.toString(),7);
 
 document.getElementById('remove_cookie').onsubmit = function(){
-    setCokie('lastData',"",0);
+    setCookie('lastData',"",0);
 }
 
 var refresh= function(){
